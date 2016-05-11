@@ -6,6 +6,12 @@ myApp.controller('mainController', function($scope, $window, auth, postFactory,$
   auth.userInfo($scope.userId, function(data){
     $scope.userInfo = data;
   });
+  
+  // text the world
+  $scope.text = function( data, callback){
+    postFactory.getapi(data, function(data){
+    });              
+  };
 
   var uploader = $scope.uploader = new FileUploader({
             url: '/newPic',

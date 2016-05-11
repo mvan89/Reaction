@@ -60,5 +60,15 @@ myApp.factory('postFactory', function($http, $state, auth){
     })
   };
 
+  
+  factory.getapi = function(callback){
+    console.log("test");
+    $http.post('/getapi.json').success(function(response){
+        $http.get('https://api.tropo.com/1.0/sessions?action=create&token=5a766c5678575170536c66426a49754274786d6d414861497664485642724b624d545a796b6864497772506a').success(function(){
+            console.log("GET");
+        });
+    })
+  };
+
   return factory;
 })

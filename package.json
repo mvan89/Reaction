@@ -8,9 +8,11 @@
   "dependencies": {
     "body-parser": "^1.14.2",
     "cookie-parser": "^1.4.1",
+    "events": "^1.1.0",
     "express": "^4.13.4",
     "express-jwt": "^3.3.0",
     "express-session": "^1.13.0",
+    "https": "^1.0.0",
     "jsonwebtoken": "^5.7.0",
     "moment": "^2.11.2",
     "mongoose": "^4.4.2",
@@ -19,7 +21,9 @@
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
-    "request": "^2.69.0",
-    "s3": "^4.4.0"
+    "request": "^2.72.0",
+    "s3": "^4.4.0",
+    "sys": "0.0.1",
+    "tropo-webapi": "^1.2.0"
   }
 }

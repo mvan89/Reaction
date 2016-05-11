@@ -5,6 +5,10 @@ var auth = jwt({secret: secret, userProperty: 'payload'});
 var request = require('request');
 var path = require('path');
 var fs = require('fs');
+var http = require('http');
+var sys = require ('sys');
+var request = require('request');
+var tropowebapi = require('tropo-webapi');
 
 module.exports = function(app, client){
   app.get('/userInfo/:_id', function(req, res){
@@ -69,6 +73,17 @@ module.exports = function(app, client){
         }
       });
     });
+
+  });
+
+  app.post('/getapi.json', function(req,res){ 
+    var token = "5a766c5678575170536c66426a49754274786d6d414861497664485642724b624d545a796b6864497772506a";
+
+    var tropo = new tropowebapi.TropoWebAPI();
+
+    tropo.call("+14083989440", null, null, null, null, null, "SMS", null, null, null);
+    tropo.say("Tag, you're it!!");
+    res.send(tropowebapi.TropoJSON(tropo));
 
   });
 }
